@@ -10,11 +10,18 @@ The docker build command builds Docker images from a Dockerfile and a “context
 ## docker logs
 Use this command to display the logs of a container, you must specify a container and can use flags, such as --follow to follow the output in the logs of using the program. docker logs --follow my_container
 
+## docker system prune
+This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all build cache
+
 ## delete all stopped containers
 docker rm $(docker ps -a -q)
 
 ## kill all running containers
 docker kill $(docker ps -q)
 
-# delete all images
+## delete all images
 docker rmi $(docker images -q)
